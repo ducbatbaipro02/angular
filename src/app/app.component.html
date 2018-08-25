@@ -1,0 +1,198 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <div style="text-align:center">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+</div>
+<h2>Here are some links to help you start: </h2>
+<ul>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
+  </li>
+  <li>
+    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
+  </li>
+</ul> -->
+
+<div class="body">
+  <div class="nav-bar">
+    <div class="title">
+      <p>ng-</p>
+      <span>
+        <a rel="noopener" routerLink="/dashboard">admin</a>
+      </span>
+    </div>
+    <div class="menu-top">
+      <div class="left-menu-top">
+        <div class="line-menu">
+          <p (click)="Change()">
+            <i class="fas fa-align-justify"></i>
+          </p>
+        </div>
+        <div class="search-box">
+          <p>
+            <i class="fas fa-search"></i>
+          </p>
+          <input type="text" placeholder="Search for...." />
+        </div>
+      </div>
+      <div class="right-menu-top">
+        <div class="email-contact">
+          <div class="email-name">
+            <p>Have question?</p>
+            <span>
+              <a href="">contact@akveo.com</a>
+            </span>
+          </div>
+          <div class="group-icon">
+            <span>
+              <i class="far fa-bell"></i>
+            </span>
+            <span>
+              <i class="far fa-envelope"></i>
+            </span>
+          </div>
+        </div>
+        <div class="log-off-menu" (click)="ClickLog()">
+          <img src="" />
+          <div class="nav-log-off" [hidden]="isLog === false">
+            <div class="tool-bar-log-off"></div>
+            <div class="tool-bar-detail">
+              <ul>
+                <a><li><i class="fas fa-user-alt"></i>Profile</li></a>
+                <a><li><i class="fas fa fa-cog"></i>Setting</li></a>
+                <a><li><i class="fas fa-power-off"></i>Sign out</li></a>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div [ngClass]="{'left-menu-after': isChange === true, 'left-menu': isChange === false}">
+    <div class="menu-bar">
+      <ul>
+        <li>
+          <a class="title-menu" (click)="Clicked()" [ngClass]="{'active': isClick === true}" rel="noopener" routerLink="/dashboard">
+            <i class="fas fa-home"></i>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li>
+          <a class="title-menu" (click)="Collapse()">
+            <i class="fas fa-angle-up" [ngClass]="{'fa-angle-down': isCollapse === false}"></i>
+            <i class="fas fa-cogs"></i>
+            <span>Component</span>
+          </a>
+          <ul class="child-menu" [hidden]="isCollapse === false">
+            <a rel="noopener" routerLink="/component/treeview" [hidden]="isChange === true">
+              <li>Tree View</li>
+            </a>
+          </ul>
+          <ul [ngClass]="{'child-menu-toolbar': isChange === true}" [hidden]="isCollapse === false">
+            <div class="tool-bar"></div>
+            <a rel="noopener" routerLink="/component/treeview" [hidden]="isCollapse === true">
+              <li>Tree View</li>
+            </a>
+          </ul>
+        </li>
+        <li>
+          <a class="title-menu" (click)="CollapseChart()">
+            <i class="fas fa-angle-up" [ngClass]="{'fa-angle-down': isCollapseChart === false}"></i>
+            <i class="fas fa-chart-bar"></i>
+            <span>Chart</span>
+          </a>
+          <ul class="child-menu" [hidden]="isCollapseChart === false">
+            <a rel="noopener" routerLink="/chart/chartist" [hidden]="isChange === true">
+              <li>Chartist.Js</li>
+            </a>
+          </ul>
+          <ul [ngClass]="{'child-menu-toolbar': isChange === true}" [hidden]="isCollapseChart === false">
+            <div class="tool-bar"></div>
+            <a rel="noopener" routerLink="/chart/chartist" [hidden]="isCollapseChart === true">
+              <li>Chartist.Js</li>
+            </a>
+          </ul>
+        </li>
+        <li>
+          <a class="title-menu" (click)="CollapseUI()">
+            <i class="fas fa-angle-up" [ngClass]="{'fa-angle-down': isCollapseUI === false}"></i>
+            <i class="fas fa-laptop"></i>
+            <span>UI Feature</span>
+          </a>
+          <ul class="child-menu" [hidden]="isCollapseUI === false">
+            <a href="" [hidden]="isChange === true">
+              <li>Typography</li>
+            </a>
+            <a href="" [hidden]="isChange === true">
+              <li>Buttons</li>
+            </a>
+            <a href="" [hidden]="isChange === true">
+              <li>Icons</li>
+            </a>
+            <a href="" [hidden]="isChange === true">
+              <li>Modals</li>
+            </a>
+            <a href="" [hidden]="isChange === true">
+              <li>Slim loading bar</li>
+            </a>
+            <a href="" [hidden]="isChange === true">
+              <li>Grid</li>
+            </a>
+          </ul>
+          <ul [ngClass]="{'child-menu-toolbar': isChange === true}" [hidden]="isCollapseUI === false">
+            <div class="tool-bar"></div>
+            <a href="" [hidden]="isCollapseUI === true">
+              <li>Typography</li>
+            </a>
+            <a href="" [hidden]="isCollapseUI === true">
+              <li>Buttons</li>
+            </a>
+            <a href="" [hidden]="isCollapseUI === true">
+              <li>Icons</li>
+            </a>
+            <a href="" [hidden]="isCollapseUI === true">
+              <li>Modals</li>
+            </a>
+            <a href="" [hidden]="isCollapseUI === true">
+              <li>Slim loading bar</li>
+            </a>
+            <a href="" [hidden]="isCollapseUI === true">
+              <li>Grid</li>
+            </a>
+          </ul>
+        </li>
+        <li>
+          <a class="title-menu" (click)="CollapseForm()">
+            <i class="fas fa-angle-up" [ngClass]="{'fa-angle-down': isCollapseForm === false}"></i>
+            <i class="fas fa-edit"></i>
+            <span>Form Emplement</span>
+          </a>
+          <ul class="child-menu" [hidden]="isCollapseForm === false">
+            <a rel="noopener" routerLink="/formemplement/forminputs" [hidden]="isChange === true">
+              <li>Form Inputs</li>
+            </a>
+            <a rel="noopener" routerLink="/formemplement/formlayouts" [hidden]="isChange === true">
+              <li>Form Layouts</li>
+            </a>
+          </ul>
+          <ul [ngClass]="{'child-menu-toolbar': isChange === true}" [hidden]="isCollapseForm === false">
+            <div class="tool-bar"></div>
+            <a rel="noopener" routerLink="/formemplement/forminputs" [hidden]="isCollapseForm === true">
+              <li>Form Inputs</li>
+            </a>
+            <a rel="noopener" routerLink="/formemplement/formlayouts" [hidden]="isCollapseForm === true">
+              <li>Form Layouts</li>
+            </a>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

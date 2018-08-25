@@ -1,0 +1,35 @@
+/* You can add global styles to this file, and also import other style files */
+body {
+    background: url(../src/img/sky-bg-1.jpg) no-repeat;
+    margin: 0;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+.nav-bar {
+    width: 100%;
+    height: 66px;
+    background: #282828;
+    box-shadow: 2px 0 3px rgba(0,0,0,.5);
+    display: flex;
+    align-items: center;
+    color: #fff;
+}
+
+.left-menu {
+    height: 964px;
+    width: 200px;
+    background: #282828;
+    transition: width .5s ease;
+    float: left;
+    z-index: 999;
+    position: relative;
+}
+
+// app-dashboard {
+//     display: flex;
+//     justify-content: flex-end;
+//     z-index: 1;
+// }

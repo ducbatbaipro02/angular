@@ -1,0 +1,56 @@
+@import "src/app/dashboard/dashboard.component.scss";
+
+.header-content-treeview {
+    .body-content-treeview {
+        background: hsla(0,0%,100%,.1);
+        color: #fff;
+        width: 40%;
+        height: 100%;
+        float: left;
+        margin: 15px;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+        border-radius: 10px;
+        box-shadow: 1px 1px 4px rgba(0,0,0,.15);
+    
+        .header-title {
+            height: 50px;
+            border-bottom: 1px solid #fff;
+
+            h3 {
+                padding: 15px 25px;
+                margin: 0;
+                font-weight: 400;
+                font-size: 16px;
+                text-transform: uppercase;
+            }
+        }
+    }
+}
+
+.detail-content-treeview {
+    font: 14px/16px Roboto,sans-serif;
+
+    li {
+        line-height: 20px;
+        cursor: context-menu;
+    }
+}
+
+// .footer-content-box {
+//     display: -webkit-inline-box;
+//     position: fixed;
+//     width: 100%;
+//     bottom: 0;
+
+//     .footer {
+//         width: 80%;
+//     }
+// }
+
+.body-content-detail {
+    min-height: 815px;
+    height: 100%;
+}

@@ -1,0 +1,126 @@
+<div class="body-box">
+  <div class="title">
+    <div class="left-title">
+      <h2>TREE VIEW</h2>
+    </div>
+    <div class="right-title">
+      <p><a href="#">Home</a></p>
+      <span>/</span>
+      <span>TreeView</span>
+    </div>
+  </div>
+
+  <div class="header-content-treeview">
+    <div class="body-content-treeview">
+      <div class="header-title">
+        <h3>Basic</h3>
+      </div>
+      <div class="detail-content-treeview">
+        <ul>
+          <li><span (click)="Toogle()">Programming languages by programming paragramming</span>
+            <ul>
+              <li [hidden]="isHidden === false">New tag</li>
+              <li [hidden]="isHidden === false">New folder</li>
+              <li [hidden]="isHidden === false">Rename</li>
+              <li [hidden]="isHidden === false">Remove</li>
+              <li><span (click)="Object()">Object-oriented programming</span>
+                <ul>
+                  <li [hidden]="isHiddenObject === false">New tag</li>
+                  <li [hidden]="isHiddenObject === false">New folder</li>
+                  <li [hidden]="isHiddenObject === false">Rename</li>
+                  <li [hidden]="isHiddenObject === false">Remove</li>
+                </ul>
+                <ul>
+                  <li><span (click)="Java()">Java</span>
+                    <ul [hidden]="isHiddenJava === false">
+                      <li>New tag</li>
+                      <li>New folder</li>
+                      <li>Rename</li>
+                      <li>Remove</li>
+                    </ul>
+                  </li>
+                  <li><span (click)="C()">C++</span>
+                    <ul [hidden]="isHiddenC === false">
+                      <li>New tag</li>
+                      <li>New folder</li>
+                      <li>Rename</li>
+                      <li>Remove</li>
+                    </ul>
+                  </li>
+                  <li><span (click)="CSharp()">C#</span>
+                    <ul [hidden]="isHiddenCSharp === false">
+                      <li>New tag</li>
+                      <li>New folder</li>
+                      <li>Rename</li>
+                      <li>Remove</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li><span (click)="Prototype()">Prototype-based programming</span>
+                <ul>
+                  <li [hidden]="isHiddenProto === false">New tag</li>
+                  <li [hidden]="isHiddenProto === false">New folder</li>
+                  <li [hidden]="isHiddenProto === false">Rename</li>
+                  <li [hidden]="isHiddenProto === false">Remove</li>
+                </ul>
+                <ul>
+                  <li><span (click)="JavaScript()">JavaScript</span>
+                    <ul [hidden]="isHiddenJS === false">
+                      <li>New tag</li>
+                      <li>New folder</li>
+                      <li>Rename</li>
+                      <li>Remove</li>
+                    </ul>
+                  </li>
+                  <li><span (click)="Coffee()">CoffeeScript</span>
+                    <ul [hidden]="isHiddenCoffee === false">
+                      <li>New tag</li>
+                      <li>New folder</li>
+                      <li>Rename</li>
+                      <li>Remove</li>
+                    </ul>
+                  </li>
+                  <li><span (click)="Lua()">Lua</span>
+                    <ul [hidden]="isHiddenLua === false">
+                      <li>New tag</li>
+                      <li>New folder</li>
+                      <li>Rename</li>
+                      <li>Remove</li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="body-content-detail">
+    
+  </div>
+
+  <div class="footer-content-box">
+    <div class="footer">
+      <div class="left-footer">
+        <div class="name-page">
+          <span>@</span>
+          <span><a href="#">Akveo</a></span>
+          <span>2018</span>
+        </div>
+        <div class="group-icon-contact">
+          <a href="#"><div class="facebook-contact"><i class="fab fa-facebook-f"></i></div></a>
+          <a href="#"><div class="twister-contact"><i class="fab fa-twitter"></i></div></a>
+          <a href="#"><div class="google-contact"><i class="fab fa-google-plus-g"></i></div></a>
+          <a href="#"><div class="github-contact"><i class="fab fa-github"></i></div></a>
+        </div>
+      </div>
+      <div class="right-footer">
+        <span>Created with</span>
+        <p><i class="fas fa-heart"></i></p>
+      </div>
+    </div>
+  </div>
+</div>
